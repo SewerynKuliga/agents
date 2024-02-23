@@ -21,10 +21,12 @@ export default function Home() {
       </S.FirstMessage>
 
       <S.SecondWMessage>
-        <div>Wchodzisz do aplikacji o wysokim stopniu tajności. </div>
-        <p>Wymagany kod:</p>
-        <b>5923 859 4 2424 0575 98 18 2137 105 40</b>
         <legend>Zasady bezpieczeństwa</legend>
+        <p>Wchodzisz do aplikacji o wysokim stopniu tajności. </p>
+        <p>Wymagany kod:</p>
+        <p>
+          <b>5923 859 4 2424 0575 98 18 2137 105 40</b>
+        </p>
       </S.SecondWMessage>
     </S.Main>
   );

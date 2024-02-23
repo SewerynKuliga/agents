@@ -24,7 +24,7 @@ export const FirstMessage = styled.fieldset`
   top: 10%;
   left: 10%;
 
-  width: 500px;
+  max-width: 500px;
 
   border: 2px solid white;
   color: white;
@@ -32,6 +32,11 @@ export const FirstMessage = styled.fieldset`
   font-weight: 900;
 
   filter: blur(2.5px);
+
+  @media (max-width: 620px) {
+    top: 2%;
+    right: 7%;
+  }
 `;
 
 export const SecondWMessage = styled.fieldset`
@@ -41,11 +46,16 @@ export const SecondWMessage = styled.fieldset`
   bottom: 9%;
   right: 5%;
 
-  width: 400px;
+  max-width: 400px;
 
   border: 2px solid white;
   color: white;
   font-size: 20px;
 
-  filter: blur(1px);
+  filter: blur(1.5px);
+
+  @media (max-width: 620px) {
+    left: 10%;
+    padding: 10px;
+  }
 `;

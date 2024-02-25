@@ -5,13 +5,16 @@ export default function LoginInput() {
   const agentName = "J.Smith";
   const [login, setLogin] = useState<string[]>([]);
 
-  const audio = new Audio("/sounds/machine_sound.wav");
-  audio.muted;
+  const [audio, setAudio] = useState<HTMLAudioElement | null>(null);
+
+  useEffect(() => {
+    setAudio(new Audio("/sounds/machine_sound.wav"));
+  }, []);
 
   useEffect(() => {
     const interval = setInterval(() => {
       if (agentName.length > login.length) {
-        audio.play();
+        audio && audio.play();
         setLogin((prevArray) => [...prevArray, agentName[login.length]]);
       } else {
         clearInterval(interval);
@@ -19,7 +22,7 @@ export default function LoginInput() {
     }, 400);
 
     return () => clearInterval(interval);
-  }, [login, agentName]);
+  }, [login, agentName, audio]);
 
   return (
     <S.TextField

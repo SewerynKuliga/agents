@@ -1,5 +1,6 @@
 import Image from "next/image";
 import styled from "@emotion/styled";
+import { Box } from "@mui/material";
 
 export const Main = styled.main`
   position: relative;
@@ -18,7 +19,7 @@ export const BgImage = styled(Image)`
   z-index: -1;
 `;
 
-export const FirstMessage = styled.fieldset`
+export const FirstMessage = styled(Box)`
   position: absolute;
   padding: 30px;
   top: 10%;
@@ -31,6 +32,7 @@ export const FirstMessage = styled.fieldset`
   font-size: 20px;
   font-weight: 900;
 
+  backdrop-filter: blur(1px);
   filter: blur(2.5px);
 
   @media (max-width: 620px) {
@@ -39,7 +41,7 @@ export const FirstMessage = styled.fieldset`
   }
 `;
 
-export const SecondWMessage = styled.fieldset`
+export const SecondWMessage = styled(Box)`
   position: absolute;
   padding: 40px;
   text-align: center;
@@ -52,10 +54,10 @@ export const SecondWMessage = styled.fieldset`
   color: white;
   font-size: 20px;
 
+  backdrop-filter: blur(2px);
   filter: blur(1.5px);
 
   @media (max-width: 620px) {
-    left: 10%;
-    padding: 10px;
+    display: none;
   }
 `;

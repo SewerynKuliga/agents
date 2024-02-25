@@ -19,7 +19,7 @@ export default function LoginInput() {
       } else {
         clearInterval(interval);
       }
-    }, 400);
+    }, 600);
 
     return () => clearInterval(interval);
   }, [login, agentName, audio]);

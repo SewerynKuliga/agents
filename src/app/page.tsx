@@ -1,10 +1,10 @@
-"use client";
-
 import * as S from "./page.styled";
 import MatrixBg from "./matrix.webp";
 import LoginForm from "./Form";
 
 export default function Home() {
+  const agentName = "J.Smith";
+
   return (
     <S.Main>
       <S.BgImage src={MatrixBg} alt="Matrix Background" fill priority />
@@ -20,7 +20,6 @@ export default function Home() {
           Także bezpowrotnie zmarnowałeś kilkanaście sekund swojego życia.
         </p>
       </S.FirstMessage>
-
       <S.SecondWMessage component="fieldset">
         <legend>Zasady bezpieczeństwa</legend>
         <p>Wchodzisz do aplikacji o wysokim stopniu tajności. </p>
@@ -29,8 +28,7 @@ export default function Home() {
           <b>5923 859/4 2424 0575 98/18 2137 105 40</b>
         </p>
       </S.SecondWMessage>
-
-      <LoginForm />
+      <LoginForm agentName={agentName} />
     </S.Main>
   );
 }

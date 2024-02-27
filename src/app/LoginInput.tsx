@@ -1,8 +1,13 @@
+"use client";
+
 import { useEffect, useState } from "react";
 import * as S from "./Inputs.styled";
 
-export default function LoginInput() {
-  const agentName = "J.Smith";
+type LoginInputType = {
+  agentName: string;
+};
+
+export default function LoginInput({ agentName }: LoginInputType) {
   const [login, setLogin] = useState<string[]>([]);
 
   const [audio, setAudio] = useState<HTMLAudioElement | null>(null);

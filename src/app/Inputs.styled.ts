@@ -1,3 +1,5 @@
+"use client";
+
 import styled from "@emotion/styled";
 import { TextField as TextFieldMui } from "@mui/material";
 

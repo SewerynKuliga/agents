@@ -2,12 +2,18 @@ import * as S from "./Form.styled";
 import LoginInput from "./LoginInput";
 import KeyInput from "./KeyInput";
 
-export default function LoginForm() {
+type LoginFormType = {
+  agentName: string;
+};
+
+export default function LoginForm({ agentName }: LoginFormType) {
   return (
     <S.LoginFormWrapper>
-      <LoginInput />
+      <LoginInput agentName={agentName} />
       <KeyInput />
-      <S.Button variant="contained">LogIN</S.Button>
+      <S.Button variant="contained" type="submit">
+        LogIN
+      </S.Button>
     </S.LoginFormWrapper>
   );
 }

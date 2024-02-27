@@ -1,3 +1,5 @@
+"use client";
+
 import { Button as ButtonMui } from "@mui/material";
 import styled from "@emotion/styled";
 

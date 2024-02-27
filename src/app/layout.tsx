@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { ReduxProvider } from "./store/provider";
 
 export const metadata: Metadata = {
   title: "J.S. List",
@@ -20,7 +21,7 @@ export default function RootLayout({
           maxHeight: "100vh",
         }}
       >
-        {children}
+        <ReduxProvider> {children}</ReduxProvider>
       </body>
     </html>
   );

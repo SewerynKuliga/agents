@@ -2,12 +2,12 @@
 
 import { useEffect, useState } from "react";
 import * as S from "./Inputs.styled";
+import { useAppSelector } from "./store/storeHooks";
+import { selectAuthAgentName } from "./store/auth/authSlice";
 
-type LoginInputType = {
-  agentName: string;
-};
+export default function LoginInput() {
+  const agentName = useAppSelector(selectAuthAgentName);
 
-export default function LoginInput({ agentName }: LoginInputType) {
   const [login, setLogin] = useState<string[]>([]);
 
   const [audio, setAudio] = useState<HTMLAudioElement | null>(null);
@@ -17,6 +17,7 @@ export default function LoginInput({ agentName }: LoginInputType) {
   }, []);
 
   useEffect(() => {
+    if (!agentName) return;
     const interval = setInterval(() => {
       if (agentName.length > login.length) {
         audio && audio.play();

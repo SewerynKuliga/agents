@@ -1,13 +1,15 @@
+"use client";
+
 import * as S from "./page.styled";
 import MatrixBg from "./matrix.webp";
 import LoginForm from "./Form";
+import EntryDialog from "./EntryDialog";
 
 export default function Home() {
-  const agentName = "J.Smith";
-
   return (
     <S.Main>
-      <S.BgImage src={MatrixBg} alt="Matrix Background" fill priority />
+      <EntryDialog />
+      <S.BgImage src={MatrixBg} alt="Matrix Background" fill rel="preload" />
       <S.FirstMessage component="fieldset">
         <legend>Nic niewazny komunikat NR. 81/62/N0</legend>
         <p>
@@ -28,7 +30,7 @@ export default function Home() {
           <b>5923 859/4 2424 0575 98/18 2137 105 40</b>
         </p>
       </S.SecondWMessage>
-      <LoginForm agentName={agentName} />
+      <LoginForm />
     </S.Main>
   );
 }
